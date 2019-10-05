@@ -26,3 +26,5 @@ Route::get('shelterhasdogs/{shelter_id}', 'ShelterHasDogsController@index')->nam
 Route::get('doglookerchosedogs/{doglooker_id}', 'DoglookerChoseDogsController@index')->name('shelterhasdogs.index');
 
 Route::post('interests', 'InterestsController@store')->name('interests.store');
+
+Route::get('interested-people/{dog_id}', 'InterestedPeople@index')->name('interestedPeople.index');

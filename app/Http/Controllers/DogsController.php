@@ -32,13 +32,8 @@ class DogsController extends Controller
 
 
     public function show($dog_id){
-
         $dog = Dog::find($dog_id);
-
-
         $dog->age = $this->getYears($dog->age);
-
-
         return response()->json($dog);
 
     }
