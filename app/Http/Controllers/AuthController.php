@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\User;
 use Carbon\Carbon;
 
 class AuthController extends Controller
@@ -20,7 +21,7 @@ class AuthController extends Controller
               'error' => 'invalid_credentials'
           ], 401);
 
-      $user = $request->user();
+      $user = User::where('username', $request->username)->firstOrFail();
 
       $tokenResult = $this->getToken($user, $request);
 
