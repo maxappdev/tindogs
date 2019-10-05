@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Interest;
-use App\DogLooker;
+use App\Doglooker;
 
 class InterestsController extends Controller
 {
@@ -13,7 +13,7 @@ class InterestsController extends Controller
         
         $interest = new Interest();
         $interest->dog_id = $request->dog_id;
-        $interest->doglooker_id = DogLooker::where('user_id', auth('api')->user()->id)->firstOrFail()->id;
+        $interest->doglooker_id = Doglooker::where('user_id', auth('api')->user()->id)->firstOrFail()->id;
         $interest->status = 0;
         $interest->save();
 
