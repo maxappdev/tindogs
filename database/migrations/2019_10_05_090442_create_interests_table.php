@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDogsTable extends Migration
+class CreateInterestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateDogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dogs', function (Blueprint $table) {
+        Schema::create('interests', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->integer('age');
-            $table->string('breed');
-            $table->string('color');
-            $table->string('origin');
-            $table->string('description');
+            $table->unsignedBigInteger('doglooker_id');
+            $table->unsignedBigInteger('dog_id');
             $table->timestamps();
+            //$table->foreign('doglooker_id')->references('id')->on('doglookers');
+            $table->foreign('dog_id')->references('id')->on('dogs');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateDogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dogs');
+        Schema::dropIfExists('interests');
     }
 }

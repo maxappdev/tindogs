@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDogsTable extends Migration
+class CreateShelterHasDogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateDogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dogs', function (Blueprint $table) {
+        Schema::create('shelter_has_dogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->integer('age');
-            $table->string('breed');
-            $table->string('color');
-            $table->string('origin');
-            $table->string('description');
+            $table->unsignedBigInteger('dog_id');
+            $table->unsignedBigInteger('shelter_id');
             $table->timestamps();
+            $table->foreign('dog_id')->references('id')->on('dogs');
+            //$table->foreign('shelter_id')->references('id')->on('shelters');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateDogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dogs');
+        Schema::dropIfExists('shelter_has_dogs');
     }
 }
