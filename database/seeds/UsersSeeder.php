@@ -26,7 +26,13 @@ class UsersSeeder extends Seeder
         ]);
 
         factory(App\Shelter::class)->create([
+            'id' => 1,
             'user_id' => 2,
         ]);
+
+        factory(App\shelter_has_dogs::class)->create([
+            'shelter_id' => 1,
+        ]);
+
     }
 }
