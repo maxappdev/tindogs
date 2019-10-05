@@ -7,7 +7,7 @@ use App\DogLooker;
 $factory->define(DogLooker::class, function (Faker $faker) {
 
   $photos = [
-
+    'photoslink1'
   ];
 
   return [
