@@ -7,11 +7,17 @@ use App\Dog;
 
 class DogsController extends Controller
 {
-    
+
     public function index(){
 
         $dogs = Dog::all();
 
+        foreach ($dogs as $dog) {
+          $dog->age = $age;
+        }
+
+        dd($age);
+        
         return response()->json($dogs);
 
     }

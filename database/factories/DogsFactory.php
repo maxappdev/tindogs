@@ -17,7 +17,7 @@ $factory->define(App\Dog::class, function (Faker $faker) {
     );
 
     $colors = array(
-        'Brown', 
+        'Brown',
         'Red',
         'Yellow'
     );
@@ -107,11 +107,11 @@ $factory->define(App\Dog::class, function (Faker $faker) {
         "https://random.dog/a3242397-ade0-4887-93bd-5390853b7f55.jpg",
         "https://random.dog/08b34a90-ffc6-4f80-829a-2c3e7414f26e.jpg",
         "https://random.dog/4bd3f722-8acc-4eb3-9572-7b516edebc93.jpg"
-    ];      
+    ];
 
     return [
         'name' => $faker->firstname,
-        'age' => $faker->numberBetween(1,15),
+        'age' => $faker->numberBetween(2,180),
         'breed' => $breeds[rand(0, sizeof($breeds)-1)],
         'color' => $colors[rand(0, sizeof($colors)-1)],
         'origin' => $countries[rand(0, sizeof($countries)-1)],
