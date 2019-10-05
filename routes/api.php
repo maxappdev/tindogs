@@ -23,5 +23,6 @@ Route::post('logout', 'AuthController@logout')->name('logout');
 Route::get('dogs', 'DogsController@index')->name('dogs.index');
 Route::get('dogs/{dog_id}', 'DogsController@show')->name('dogs.show');
 Route::get('shelterhasdogs/{shelter_id}', 'ShelterHasDogsController@index')->name('shelterhasdogs.index');
+Route::get('doglookerchosedogs/{doglooker_id}', 'DoglookerChoseDogsController@index')->name('shelterhasdogs.index');
 
 Route::post('interests', 'InterestsController@store')->name('interests.store');
