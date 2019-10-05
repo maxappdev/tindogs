@@ -21,6 +21,7 @@ class CreateDogsTable extends Migration
             $table->string('color');
             $table->string('origin');
             $table->string('description');
+            $table->string('photo');
             $table->timestamps();
         });
     }
