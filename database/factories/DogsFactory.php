@@ -116,6 +116,8 @@ $factory->define(App\Dog::class, function (Faker $faker) {
         'color' => $colors[rand(0, sizeof($colors)-1)],
         'origin' => $countries[rand(0, sizeof($countries)-1)],
         'description' => $faker->text,
+        'family_friendly' => $faker->numberBetween(0,1),
+        'pet_friendly' => $faker->numberBetween(0,1),
         'photo' => $photos[rand(0, sizeof($photos)-1)]
     ];
 });

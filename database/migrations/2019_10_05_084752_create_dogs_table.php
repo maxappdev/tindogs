@@ -22,6 +22,8 @@ class CreateDogsTable extends Migration
             $table->string('origin');
             $table->string('description');
             $table->string('photo');
+            $table->string('family_friendly');
+            $table->string('pet_friendly');
             $table->timestamps();
         });
     }

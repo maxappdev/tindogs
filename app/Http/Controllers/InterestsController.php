@@ -13,7 +13,8 @@ class InterestsController extends Controller
         
         $interest = new Interest();
         $interest->dog_id = $request->dog_id;
-        $interest->doglooker_id = Doglooker::where('user_id', auth('api')->user()->id)->firstOrFail()->id;
+        //$interest->doglooker_id = Doglooker::where('user_id', auth('api')->user()->id)->firstOrFail()->id;
+        $interest->doglooker_id = Doglooker::where('user_id', 1)->firstOrFail()->id;
         $interest->status = 0;
         $interest->save();
 

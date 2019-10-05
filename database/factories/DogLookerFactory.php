@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
-use App\DogLooker;
+use App\Doglooker;
 
 $factory->define(DogLooker::class, function (Faker $faker) {
 
