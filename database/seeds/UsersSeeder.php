@@ -32,6 +32,32 @@ class UsersSeeder extends Seeder
 
         factory(App\shelter_has_dogs::class)->create([
             'shelter_id' => 1,
+            'dog_id' => 3
+        ]);
+
+        factory(App\shelter_has_dogs::class)->create([
+            'shelter_id' => 1,
+            'dog_id' => 4
+        ]);
+
+        factory(App\shelter_has_dogs::class)->create([
+            'shelter_id' => 1,
+            'dog_id' => 5
+        ]);
+
+        factory(App\Interest::class)->create([
+            'doglooker_id' => 1,
+            'dog_id' => 3
+        ]);
+
+        factory(App\shelter_has_dogs::class)->create([
+            'shelter_id' => 1,
+            'dog_id' => 4
+        ]);
+        
+        factory(App\shelter_has_dogs::class)->create([
+            'shelter_id' => 1,
+            'dog_id' => 5
         ]);
 
     }
