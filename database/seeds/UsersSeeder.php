@@ -20,5 +20,13 @@ class UsersSeeder extends Seeder
             'id' => 2,
             'username' => 'shelter'
         ]);
+
+        factory(App\DogLooker::class)->create([
+            'user_id' => 1,
+        ]);
+
+        factory(App\Shelter::class)->create([
+            'user_id' => 2,
+        ]);
     }
 }

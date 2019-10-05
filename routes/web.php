@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login is done');
-});
+Route::post('/login', 'AuthController@login')->name('login');

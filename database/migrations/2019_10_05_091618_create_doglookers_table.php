@@ -17,6 +17,7 @@ class CreateDoglookersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id');
             $table->string('biography');
+            $table->string('photo');
             $table->timestamps();
         });
     }
