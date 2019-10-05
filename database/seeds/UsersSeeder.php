@@ -22,6 +22,7 @@ class UsersSeeder extends Seeder
         ]);
 
         factory(App\Doglooker::class)->create([
+            'id' => 1,
             'user_id' => 1,
         ]);
 
