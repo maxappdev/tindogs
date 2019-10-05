@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 
 Route::get('user', function (Request $request) { return response()->json(auth('api')->user()); });
 
-    Route::post('login', 'AuthController@login')->name('login');
-    Route::post('register', 'AuthController@register')->name('register');
-    Route::post('logout', 'AuthController@logout')->name('logout');
-    Route::get('dogs', 'DogsController@index')->name('dogs.index');
+Route::post('login', 'AuthController@login')->name('login');
+Route::post('register', 'AuthController@register')->name('register');
+Route::post('logout', 'AuthController@logout')->name('logout');
+Route::get('dogs', 'DogsController@index')->name('dogs.index');
