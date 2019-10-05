@@ -17,8 +17,9 @@ class CreateInterestsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('doglooker_id');
             $table->unsignedBigInteger('dog_id');
+            $table->integer('status');
             $table->timestamps();
-            //$table->foreign('doglooker_id')->references('id')->on('doglookers');
+            $table->foreign('doglooker_id')->references('id')->on('doglookers');
             $table->foreign('dog_id')->references('id')->on('dogs');
         });
     }

@@ -19,7 +19,7 @@ class CreateShelterHasDogsTable extends Migration
             $table->unsignedBigInteger('shelter_id');
             $table->timestamps();
             $table->foreign('dog_id')->references('id')->on('dogs');
-            //$table->foreign('shelter_id')->references('id')->on('shelters');
+            $table->foreign('shelter_id')->references('id')->on('shelters');
         });
     }
 
