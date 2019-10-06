@@ -61,6 +61,8 @@ class UsersSeeder extends Seeder
             
             foreach($interested_person_ids as $interested_person_id){
 
+                if($interested_person_id == 1) continue;
+
                 factory(App\Interest::class)->create([
                     'doglooker_id' => $interested_person_id,
                     'dog_id' => $i
