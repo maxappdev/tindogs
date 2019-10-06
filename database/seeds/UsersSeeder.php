@@ -14,7 +14,8 @@ class UsersSeeder extends Seeder
     {
         factory(App\User::class)->create([
             'id' => 1,
-            'username' => 'doglooker'
+            'username' => 'doglooker',
+            'name' => 'Mickey Mouse'
         ]);
 
         factory(App\User::class)->create([
@@ -27,6 +28,7 @@ class UsersSeeder extends Seeder
         factory(App\Doglooker::class)->create([
             'id' => 1,
             'user_id' => 1,
+            'photo' => 'https://vignette.wikia.nocookie.net/disney/images/9/99/Mickey_Mouse_Disney_3.jpeg/revision/latest?cb=20190305233033'
         ]);
 
         factory(App\Shelter::class)->create([
