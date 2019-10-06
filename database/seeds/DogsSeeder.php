@@ -11,6 +11,6 @@ class DogsSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory(App\Dog::class, 100)->create();
+        $users = factory(App\Dog::class, 29)->create();
     }
 }
