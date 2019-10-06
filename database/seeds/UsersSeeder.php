@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Doglooker;
 
 class UsersSeeder extends Seeder
 {
@@ -21,6 +22,8 @@ class UsersSeeder extends Seeder
             'username' => 'shelter'
         ]);
 
+        factory(App\User::class, 20)->create();
+
         factory(App\Doglooker::class)->create([
             'id' => 1,
             'user_id' => 1,
@@ -31,35 +34,39 @@ class UsersSeeder extends Seeder
             'user_id' => 2,
         ]);
 
-        factory(App\shelter_has_dogs::class)->create([
-            'shelter_id' => 1,
-            'dog_id' => 3
-        ]);
+        for($i = 3; $i < 20; $i++){
 
-        factory(App\shelter_has_dogs::class)->create([
-            'shelter_id' => 1,
-            'dog_id' => 4
-        ]);
+            factory(App\Doglooker::class)->create([
+                'user_id' => $i,
+            ]);
 
-        factory(App\shelter_has_dogs::class)->create([
-            'shelter_id' => 1,
-            'dog_id' => 5
-        ]);
+        }
 
-        factory(App\Interest::class)->create([
-            'doglooker_id' => 1,
-            'dog_id' => 3
-        ]);
-
-        factory(App\shelter_has_dogs::class)->create([
-            'shelter_id' => 1,
-            'dog_id' => 4
-        ]);
         
-        factory(App\shelter_has_dogs::class)->create([
-            'shelter_id' => 1,
-            'dog_id' => 5
-        ]);
+        for($i = 1; $i < 30; $i++){
+
+            factory(App\shelter_has_dogs::class)->create([
+                'shelter_id' => 1,
+                'dog_id' => $i
+            ]);
+
+        }
+
+        for($i = 1; $i < 30; $i++){
+            
+            $interested = array();
+            $interested_person_ids = Doglooker::all()->random(7)->pluck('id');
+            
+            foreach($interested_person_ids as $interested_person_id){
+
+                factory(App\Interest::class)->create([
+                    'doglooker_id' => $interested_person_id,
+                    'dog_id' => $i
+                ]);
+
+            }
+
+        }
 
     }
 }
